@@ -1,0 +1,80 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, {Component} from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+  Button,
+  Alert,
+  PermissionsAndroid
+} from 'react-native';
+
+import CameraScreen from './CameraScreen';
+import SmsListener from 'react-native-android-sms-listener';
+
+class App extends Component {
+  componentDidMount() {
+    this.requestReadSmsPermission();
+    }
+    
+    async requestReadSmsPermission() {
+    try {
+    var granted = await PermissionsAndroid.request(
+    PermissionsAndroid.PERMISSIONS.READ_SMS,
+    {
+    title: "Auto Verification OTP",
+    message: "need access to read sms, to verify OTP"
+    }
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+    console.log("sms read permissions granted", granted);
+    granted = await PermissionsAndroid.request(
+    PermissionsAndroid.PERMISSIONS.RECEIVE_SMS,{
+    title: "Receive SMS",
+    message: "Need access to receive sms, to verify OTP"
+    }
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+    console.log("RECEIVE_SMS permissions granted", granted);
+    } else {
+    console.log("RECEIVE_SMS permissions denied");
+    }
+    } else {
+    console.log("sms read permissions denied");
+    }
+    } catch (err) {
+    console.log(err);
+    }
+    }
+
+    checkSMSListener =() => {
+      SmsListener.addListener(message => {
+        console.info(message)
+      })
+    }
+    
+  render() {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Button
+          title="Press me"
+          onPress={this.checkSMSListener}
+        />
+      </View>
+    );
+  }
+}
+
+export default App;
+
+

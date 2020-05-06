@@ -1,0 +1,129 @@
+{
+  "name": "Library E-Card",
+  "processes": [
+    {
+      "name": "Nitesh Library E-Card",
+      "stories": [
+        {
+          "name": "Application Form",
+          "tasks": [
+            {
+              "name": "Form Collection",
+              "files": [
+                {
+                  "name": "Application Form",
+                  "extension": ".pdf",
+                  "size": "338"
+                },
+                {
+                  "name": "Portrait",
+                  "extension": ".jpg",
+                  "size": "207"
+                },
+                {
+                  "name": "Aadhaar",
+                  "extension": ".pdf",
+                  "size": "648"
+                },
+                {
+                  "name": "Marks Card",
+                  "extension": ".pdf",
+                  "size": "448"
+                }
+              ]
+            },
+            {
+              "name": "Form Validation"
+            }
+          ],
+          "files": [
+            {
+              "name": "Validation Report",
+              "extension": ".pdf",
+              "size": "198"
+            }
+          ]
+        },
+        {
+          "name": "Background Check",
+          "tasks": [
+            {
+              "name": "Address Proof",
+              "files": [
+                {
+                  "name": "Aadhaar",
+                  "extension": ".pdf",
+                  "size": "648"
+                }
+              ]
+            },
+            {
+              "name": "Age Proof",
+              "files": [
+                {
+                  "name": "Marks Card",
+                  "extension": ".pdf",
+                  "size": "448"
+                }
+              ]
+            }
+          ],
+          "files": [
+            {
+              "name": "Background Check Report",
+              "extension": ".pdf",
+              "size": "816"
+            }
+          ]
+        },
+        {
+          "name": "Approval",
+          "tasks": [
+            {
+              "name": "E-Card Approval",
+              "files": [
+                {
+                  "name": "Approved Appliation",
+                  "extension": ".pdf",
+                  "size": "1237"
+                }
+              ]
+            }
+          ],
+          "files": [
+            {
+              "name": "Approval Report",
+              "extension": ".pdf",
+              "size": "127"
+            }
+          ]
+        },
+        {
+          "name": "Collection",
+          "tasks": [
+            {
+              "name": "E-Card Generation",
+              "files": [
+                {
+                  "name": "E-Card",
+                  "extension": ".pdf",
+                  "size": "481"
+                }
+              ]
+            },
+            {
+              "name": "E-Card Submission"
+            }
+          ],
+          "files": [
+            {
+              "name": "E-Card",
+              "extension": ".pdf",
+              "size": "481"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

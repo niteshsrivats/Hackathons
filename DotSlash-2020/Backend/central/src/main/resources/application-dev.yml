@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:postgresql://localhost:5432/CodeExec-dev
+      username: postgres
+      password: postgres
+      maximum-pool-size: 10
+      connection-test-query: SELECT 1
+    type: com.zaxxer.hikari.HikariDataSource
+    initialization-mode: always
+#    url: jdbc:postgresql://localhost:5432/CodeExec-dev
+#    data-username: postgres
+#    data-password: a
+#    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  jwt:
+    secret: JWTSuperSecretKey
+    expirationTimeMs: 604800000
+
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8080
