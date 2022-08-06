@@ -18,7 +18,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.11",
-    "otp-generator": "^1.1.0",
+    "otp-generator": "^3.0.0",
     "twilio": "^3.37.1",
     "validator": "^12.0.0"
   }
